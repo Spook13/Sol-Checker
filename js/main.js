@@ -5,7 +5,7 @@ function changeCity(){
     var city = document.getElementById("citySelector").value;
 
 
-    $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=792616ef42153884bc38ec23e95dbbae", function(data){
+    $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=792616ef42153884bc38ec23e95dbbae", function(data){
 
         console.log(data);
 
@@ -14,7 +14,7 @@ function changeCity(){
         var name = "<img class='location' src='images/location.png'>"+city;
 
         // calling the weather icon from JSON
-        var icon = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
+        var icon = "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
         
         // calling the temprature from JSON
         // "Math.floor" rounds number to whole number
