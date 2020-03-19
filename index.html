@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- End of Meta Tags -->
+        <!-- JS Links -->
+        
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      
+        <!-- End of JS Links -->
+        <!-- Css Links -->
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- End of Css Links -->
+    
+        <!-- Title -->
+        <title>Weather App</title>
+        <!-- End of Title -->
+    </head>
+
+    <body>
+        <!-- City Selctor -->
+        
+        <select class="customSelect" onchange="changeCity()" id="citySelector">
+
+            <!-- Selected City -->
+            <option value="Nashville" selected> Nashville, TN </option>
+
+            <!-- City Names -->
+            <option value="Montgomery"> Montgomery, AL </option>
+            <option value="Juneau"> Juneau, AK </option>
+            <option value="Phoenix"> Phoenix, AZ </option>
+            <option value="Little Rock">Little Rock, AR </option>
+            <option value="Denver"> Denver,CO </option>
+            <option value="Hartford"> Hartford, CT </option>
+            <option value="Dover"> Dover, DE </option>
+            <option value="Tallahassee"> Tallahassee, FL </option>
+            <option value="Atlanta"> Atlanta, GA </option>
+            <option value="Honolulu"> Honolulu, HI </option>
+            <option value="Boise"> Boise, ID </option>
+            <option value="Springfield"> Springfield, IL </option>
+            <option value="Indianapolis"> Indianapolis, IN </option>
+            <option value="Des Moines"> Des Moines, IA </option>
+            <option value="Topeka"> Topeka, KS </option>
+            <option value="Frankfort"> Frankfort, KY </option>
+            <option value="Baton Rouge"> TBaton Rouge, LA </option>
+            <option value="Augusta"> Augusta, ME </option>
+            <option value="Annapolis"> Annapolis, MD </option>
+            <option value="Boston"> Boston, MA </option>
+            <option value="Lansing"> Lansing, MI </option>
+            <option value="Saint Paul"> Saint Paul, MN </option>
+            <option value="Jackson"> Jackson, MS </option>
+            <option value="Missouri"> Jefferson City, MO </option>
+            <option value="Montana"> Helena, MT </option>
+            <option value="Lincoln"> Lincoln, NE </option>
+            <option value="Carson City"> Carson City, NV </option>
+            <option value="Concord"> Concord, NH </option>
+            <option value="Trenton"> Trenton, NJ </option>
+            <option value="Santa Fe"> Santa Fe, NM </option>
+            <option value="Albany"> Albany, NY </option>
+            <option value="Raleigh"> Raleigh, NC </option>
+            <option value="Bismarck"> Bismarck, ND </option>
+            <option value="Columbus"> Columbus, OH </option>
+            <option value="Oklahoma City"> Oklahoma City, OK </option>
+            <option value="Salem"> Salem, OR </option>
+            <option value="Harrisburg"> Harrisburg, PA </option>
+            <option value="Providence"> Providence, RI </option>
+            <option value="Columbia"> Columbia, SC </option>
+            <option value="Pierre"> Pierre, SD </option>
+            <option value="Austin"> Austin, TX </option>
+            <option value="Salt Lake City"> Salt Lake City, UT </option>
+            <option value="Montpelier"> Montpelier, VT </option>
+            <option value="Richmond"> Richmond, VA </option>
+            <option value="Olympia"> Olympia, WA </option>
+            <option value="Charleston"> Charleston, WV </option>
+            <option value="Madison"> Madison, WI </option>
+            <option value="Cheyenne"> Cheyenne, WY </option>
+
+
+        </select>
+        <!-- End of City Selctor -->
+        
+        <div class="weather-container">
+            <p class="name"></p>
+            <img class="icon" src="" alt="icon"> 
+            <p class="weather"></p>
+            <p class="temp"></p> 
+        </div>
+            
+        <script src="js/main.js"></script>
+    </body>        
+</html>
