@@ -45,6 +45,7 @@ function initMap() {
       zoom: 8,
       center: myLatlng,
     });
+
   
     // Configure the click listener.
     map.addListener("click", (mapsMouseEvent) => {    
@@ -54,6 +55,53 @@ function initMap() {
         var lat = coords.lat;
         var lng = coords.lng;
         changeCity(lat, lng);
+
+        document.querySelector("#weather-info").style.display = "block";
+
+       document.querySelector("#current-btn").addEventListener("click", function (){
+         
+        document.querySelector("#current-weather").style.display = "block";
+        
+        document.querySelector("#hourly-weather").style.display ="none";
+        document.querySelector("#weekly-weather").style.display ="none";
+
+       });
+
+       document.querySelector("#hourly-btn").addEventListener("click", function (){
+        console.log("clicked");
+
+        document.querySelector("#hourly-weather").style.display = "block";
+        
+        document.querySelector("#current-weather").style.display ="none";
+        document.querySelector("#weekly-weather").style.display ="none";
+
+        
+      });
+
+      document.querySelector("#weekly-btn").addEventListener("click", function (){
+        console.log("clicked");
+
+        document.querySelector("#weekly-weather").style.display = "block";
+        
+        document.querySelector("#current-weather").style.display ="none";
+        document.querySelector("#hourly-weather").style.display ="none";
+
+        
+      });
+
     });
   }
+
+  function toggleWeather () {
+    const weatherBtn = document.querySelector("#weather-btn");
+    // document.querySelector("current-btn");
+    // document.querySelector("houly-btn");
+    // document.querySelector("weekly-btn");
+
+    // document.querySelector("#current-weather");
+    // docutment.querySelector("#hourly-weather");
+    // document.querySelector("#weekly-weather");
+
+    
+  };
 

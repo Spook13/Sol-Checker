@@ -1,17 +1,12 @@
-@import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables";
-@import "../node_modules/bootstrap/scss/mixins";
 
 body{
     background-color: #e6ffff !important;  
+    height: 100%;
     margin: 0px;
     padding: 0px;
-}
-.body {
-    background-color: #e6ffff;
-    height: 100%;
     width: 100%;
 }
+
 
 /* .customSelect{
     background-color: #e6ffff;
@@ -27,9 +22,31 @@ body{
     text-align: center;
 }
 
-.name{
-    font-size: 40px;
-    font-weight: bold;
+#weather-info{
+    box-shadow: 5px 7px 7px #999;
+    /* display: none; */
+    left: 0;
+    position:absolute;
+    right: 0;
+    top: 375px;
+    height: 100%;
+}
+
+#current-weather{
+    /* display: none; */
+}
+
+#hourly-weather{
+    display: none;
+}
+
+#weekly-weather{
+    display: none;
+}
+
+.btn{
+    font-size: 14px !important;
+    font-weight: bold !important;
 }
 
 .location{
@@ -38,13 +55,32 @@ body{
 }
 
 .weather{
-    font-size: 22px;
+    font-size: 12px;
+    margin: 0;
 }
 .temp {
     font-size: 40px;
     margin: 0;
     font-weight: bold;
 }
+
 .icon {
-    /* display: none; */
+   
 }
+
+.scroll{
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.scroll a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+  .scroll a:hover {
+    background-color: #777;
+  }
