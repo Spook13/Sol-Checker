@@ -1,27 +1,25 @@
-window.onload = changeCity();
-function changeCity(){
+// window.onload = changeCity();
+function changeCity(lat, lng){
     console.log("Hello");
     var apikey = "792616ef42153884bc38ec23e95dbbae";
-    var city = document.getElementById("citySelector").value;
 
 
-    $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=792616ef42153884bc38ec23e95dbbae", function(data){
+    $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lng+"&appid=792616ef42153884bc38ec23e95dbbae&units=imperial", function(data){
 
         console.log(data);
 
         // calling the city name from JSON
-        var name = data.name;
-        var name = "<img class='location' src='images/location.png'>"+city;
+        var name = lat.toFixed(4); + ""+ lng.toFixed(4);
 
         // calling the weather icon from JSON
-        var icon = "https://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
+        var icon = "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png";
         
         // calling the temprature from JSON
         // "Math.floor" rounds number to whole number
-        var temp = Math.floor(data.main.temp);
+        var temp = Math.floor(data.current.temp);
         temp = temp + "&#176;"
 
-        var weather = data.weather[0].description;
+        var weather = data.current.weather[0].description;
 
         // callinig the name class in the HTML to display the city name
         $('.name').empty();
@@ -40,3 +38,22 @@ function changeCity(){
 
     });
 }
+
+function initMap() {
+    const myLatlng = { lat: 36.1627, lng: -86.7816 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 8,
+      center: myLatlng,
+    });
+  
+    // Configure the click listener.
+    map.addListener("click", (mapsMouseEvent) => {    
+       let coords = mapsMouseEvent.latLng.toJSON();
+    
+        console.log(coords);
+        var lat = coords.lat;
+        var lng = coords.lng;
+        changeCity(lat, lng);
+    });
+  }
+

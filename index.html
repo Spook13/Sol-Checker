@@ -12,11 +12,12 @@
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
       
         <!-- End of JS Links -->
         <!-- Css Links -->
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <!-- End of Css Links -->
     
@@ -28,13 +29,13 @@
     <body>
         <!-- City Selctor -->
         
-        <select class="customSelect" onchange="changeCity()" id="citySelector">
+        <!-- <select class="customSelect" onchange="changeCity()" id="citySelector"> -->
 
             <!-- Selected City -->
-            <option value="Nashville" selected> Nashville, TN </option>
+            <!-- <option value="Nashville" selected> Nashville, TN </option> -->
 
             <!-- City Names -->
-            <option value="Montgomery"> Montgomery, AL </option>
+            <!-- <option value="Montgomery"> Montgomery, AL </option>
             <option value="Juneau"> Juneau, AK </option>
             <option value="Phoenix"> Phoenix, AZ </option>
             <option value="Little Rock">Little Rock, AR </option>
@@ -85,15 +86,23 @@
 
 
         </select>
-        <!-- End of City Selctor -->
+        End of City Selctor -->
         
-        <div class="weather-container">
-            <p class="name"></p>
-            <img class="icon" src="" alt="icon"> 
-            <p class="weather"></p>
-            <p class="temp"></p> 
-        </div>
-            
+    <div class="body">
+
+        <div class="rounded my-5 img-fluid container-sm" id="map" style="height: 500px;"></div>
+
+            <div class="container-sm">
+                <p class="py-3 name">lat - lng</p>
+                <img class="icon" src="images/location.png" style="height: 50px; width: 50px;" alt="icon"> 
+                <p class="weather">sunny</p>
+                <p class="temp">69</p> 
+            </div>
+    </div>
+        <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+        <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDorsNumTqy-KQZ1_tpxd_gkCvnHCBmAgI&callback=initMap&libraries=&v=weekly"
+        async>   </script>
         <script src="js/main.js"></script>
     </body>        
 </html>

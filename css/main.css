@@ -1,38 +1,50 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
 body{
-    background-color: #e6ffff;
+    background-color: #e6ffff !important;  
     margin: 0px;
     padding: 0px;
 }
-.customSelect{
+.body {
+    background-color: #e6ffff;
+    height: 100%;
+    width: 100%;
+}
+
+/* .customSelect{
     background-color: #e6ffff;
     border: 1px solid transparent;
     border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
     padding: 8px 16px;
     user-select: none;
     width: 100vw;
-}
-.weather-container{
-    background-color: #e6ffff;
+} */
+
+.container-sm{
+    background-color: white;
     text-align: center;
-    height: 100vh;
 }
+
 .name{
-    padding-top: 100px;
-}
-.location{
-    height: 50px;
-    padding-bottom: 10px;
-    width: 48px;
-}
-.name{
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bold;
 }
+
+.location{
+    height: 50px;
+    width: 48px;
+}
+
 .weather{
     font-size: 22px;
 }
 .temp {
-    font-size: 60px;
+    font-size: 40px;
     margin: 0;
     font-weight: bold;
+}
+.icon {
+    /* display: none; */
 }
