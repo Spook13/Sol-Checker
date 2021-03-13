@@ -1,15 +1,14 @@
+let weatherUnitType = "imperial";
+let weatherUnitType = "metric";
+
 // window.onload = changeCity();
 function changeCity(lat, lng){
     console.log("Hello");
     var apikey = "792616ef42153884bc38ec23e95dbbae";
 
-
-    $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lng+"&appid=792616ef42153884bc38ec23e95dbbae&units=imperial", function(data){
+    $.getJSON("https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lng+"&appid=792616ef42153884bc38ec23e95dbbae&units="+weatherUnitType, function(data){
 
         console.log(data);
-
-        // calling the city name from JSON
-        var name = lat.toFixed(4); + ""+ lng.toFixed(4);
 
         // calling the weather icon from JSON
         var icon = "https://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png";
@@ -62,9 +61,9 @@ function initMap() {
 
     });
 
-  //  Adds click event listener to current-btn
+  // Adds click event listener to current-btn
     document.querySelector("#current-btn").addEventListener("click", function (){
-       // Displays current weather info 
+      // Displays current weather info 
       document.querySelector("#current-weather").style.display = "block";
       // Removes hourly andd weekly weather info
       document.querySelector("#hourly-weather").style.display ="none";
@@ -76,10 +75,10 @@ function initMap() {
       document.querySelector("#weekly-btn").classList.remove("active");
      });
 
-    //  Adds click even listener to hourly-btn
+    // Adds click even listener to hourly-btn
      document.querySelector("#hourly-btn").addEventListener("click", function (){
       console.log("clicked");
-      //  Displays hourly weather info
+      // Displays hourly weather info
       document.querySelector("#hourly-weather").style.display = "block";
       // Removes current and weekly weather info
       document.querySelector("#current-weather").style.display ="none";
@@ -91,10 +90,10 @@ function initMap() {
       document.querySelector("#weekly-btn").classList.remove("active");
     });
 
-    //  Adds click even listener to weekly-btn
+    // Adds click even listener to weekly-btn
     document.querySelector("#weekly-btn").addEventListener("click", function (){
       console.log("clicked");
-      //  Displays weekly weather info
+      // Displays weekly weather info
       document.querySelector("#weekly-weather").style.display = "block";
       // Removes current and hourly weather info
       document.querySelector("#current-weather").style.display ="none";
@@ -109,15 +108,17 @@ function initMap() {
     // Adds click even listener to f-btn
     document.querySelector("#f-btn"). addEventListener("click", function (){
       console.log("F is better than C");
+      weatherUnitType = "imperial";
       // Displays f-btn as active
       document.querySelector("#f-btn").classList.add("active");
       // Displays c-btn and as inactive
       document.querySelector("#c-btn").classList.remove("active");
     });
-    
+
      // Adds click even listener to c-btn
     document.querySelector("#c-btn"). addEventListener("click", function (){
       console.log("C is better than F");
+      weatherUnitType = "metric";
       // Displays c-btn as active
       document.querySelector("#c-btn").classList.add("active");
       // Displays f-btn as inactive
