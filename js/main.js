@@ -17,24 +17,63 @@ function changeCity(){
         // calling the temprature from JSON
         // "Math.floor" rounds number to whole number
         var temp = Math.floor(data.current.temp);
-        temp = temp + "&#176;"
+        currentTemp = temp + "&#176;"
 
         var weather = data.current.weather[0].description;
 
-        // callinig the name class in the HTML to display the city name
-        $('.name').empty();
-        $('.name').append(name);
-
+        // Current Weather Info Calls
         // calling the icon class in the HTML to display the weather icon
         $('.icon').attr('src', icon);
 
         // calling the weather class in the HTML to display the weather type
-        $('.weather').empty();
-        $('.weather').append(weather);
+        $('.current-weather').empty();
+        $('.current-weather').append(weather);
 
         // calling the temp class in the HTML to display the temprature
-        $('.temp').empty();
-        $('.temp').append(temp);
+        $('.current-temp').empty();
+        $('.current-temp').append(temp);
+
+
+      // Hourly Weather Info Calls     
+        const hourlyList = document.querySelector("#hourly-weather div");
+        for(let i = 0; i < data.hourly.length; i++){
+          var hourlyData = data.hourly[i];
+          var temp = Math.floor(hourlyData.temp);
+          temp = temp; 
+
+          var icon = "https://openweathermap.org/img/wn/" + hourlyData.weather[0].icon + "@2x.png";
+
+          var weather = hourlyData.weather[0].description;
+
+          var template = document.querySelector("#template-hourly").cloneNode(true);
+          template.querySelector(".hourly-time").innerText = hourCoverter(hourlyData.dt);
+          template.querySelector("img").src = icon;
+          template.querySelector(".hourly-weather").innerText = weather;
+          template.querySelector(".hourly-temp").innerText = temp;
+          template.style.display = "inline-block";
+          hourlyList.append(template);
+        } 
+        
+        // Weekly Weather Info Calls
+        const weeklyList = document.querySelector("#weekly-weather div");
+        for(let i = 0; i < data.daily.length; i++){
+          var weeklyData = data.daily[i];
+          var temp = Math.floor(weeklyData.temp.min) + "/" + Math.floor(weeklyData.temp.max);
+          temp = temp; 
+
+          var icon = "https://openweathermap.org/img/wn/" + weeklyData.weather[0].icon + "@2x.png";
+
+          var weather = weeklyData.weather[0].description;
+
+          var template = document.querySelector("#template-weekly").cloneNode(true);
+          template.querySelector(".weekly-hour").innerText =  dayCoverter(weeklyData.dt);
+          template.querySelector("img").src = icon;
+          template.querySelector(".weekly-weather").innerText = weather;
+          template.querySelector(".weekly-temp").innerText = temp;
+          template.style.display = "inline-block";
+          weeklyList.append(template);
+
+        };
 
     });
 }
@@ -129,8 +168,16 @@ function initMap() {
       // Updates to C when c-btn is clicked
       changeCity();
     });
-
-
   }
+
+function hourCoverter(timeStamp) {
+  var a = new Date(timeStamp * 1000);
+    return a.getHours();
+};
+
+function dayCoverter(timeStamp) {
+  var a = new Date(timeStamp * 1000);
+    return a.getDay();
+};
 
 
