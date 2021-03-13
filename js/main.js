@@ -1,8 +1,9 @@
 let weatherUnitType = "imperial";
-let weatherUnitType = "metric";
+let lat = 6.1627;
+let lng = -86.7816;
 
 // window.onload = changeCity();
-function changeCity(lat, lng){
+function changeCity(){
     console.log("Hello");
     var apikey = "792616ef42153884bc38ec23e95dbbae";
 
@@ -51,9 +52,9 @@ function initMap() {
        let coords = mapsMouseEvent.latLng.toJSON();
     
         console.log(coords);
-        var lat = coords.lat;
-        var lng = coords.lng;
-        changeCity(lat, lng);
+        lat = coords.lat;
+        lng = coords.lng;
+        changeCity();
 
         // Weatther info appears
         // Current weather by defaultt
@@ -113,6 +114,8 @@ function initMap() {
       document.querySelector("#f-btn").classList.add("active");
       // Displays c-btn and as inactive
       document.querySelector("#c-btn").classList.remove("active");
+      // Updates to F when f-btn is clicked
+      changeCity();
     });
 
      // Adds click even listener to c-btn
@@ -123,6 +126,8 @@ function initMap() {
       document.querySelector("#c-btn").classList.add("active");
       // Displays f-btn as inactive
       document.querySelector("#f-btn").classList.remove("active");
+      // Updates to C when c-btn is clicked
+      changeCity();
     });
 
 
