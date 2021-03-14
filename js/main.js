@@ -172,12 +172,81 @@ function initMap() {
 
 function hourCoverter(timeStamp) {
   var a = new Date(timeStamp * 1000);
-    return a.getHours();
+  var hour = a.getHours();
+
+  switch(hour) {
+    case 0:
+      return "12 AM";
+    case 1:
+      return "1 AM";
+    case 2:
+      return "2 AM";
+    case 3:
+      return "3 AM";
+    case 4:
+      return "4 AM";
+    case 5:
+      return "5 AM";
+    case 6:
+      return "6 AM";
+    case 7:
+      return "7 AM";
+    case 8:
+      return "8 AM";
+    case 9:
+      return "9 AM";
+    case 10:
+      return "10 AM";
+    case 11:
+      return "11 PM";
+    case 12:
+      return "12 PM";
+    case 13:
+      return "1 PM";
+    case 14:
+      return "2 PM";
+    case 15:
+      return "3 PM";
+    case 16: 
+      return "4 PM";
+    case 17:
+      return "5 PM";
+    case 18:
+      return "6 PM";
+    case 19: 
+      return "7 PM";
+    case 20:
+      return "8 PM";
+    case 21:
+      return "9 PM";
+    case 22:
+      return "10 PM";
+    case 23:
+      return "11 PM";
+  }
 };
 
 function dayCoverter(timeStamp) {
   var a = new Date(timeStamp * 1000);
-    return a.getDay();
+  var day = a.getDay();
+
+  switch(day) {
+    case 0:
+      return "Monday";
+    case 1:
+      return "Tuesday";
+    case 2:
+      return "Wednesday";
+    case 3:
+      return "Thursday";
+    case 4:
+      return "Friday";
+    case 5:
+      return "Saturday";
+    case 6:
+      return "Sunday";
+  };
+  
 };
 
 

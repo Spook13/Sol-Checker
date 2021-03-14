@@ -23,13 +23,13 @@ body{
 }
 
 #weather-info{
-    box-shadow: 5px 7px 7px #999;
-    /* display: none; */
+    box-shadow: 0px 7px 7px #999;
+    display: none;
     left: 0;
     position:absolute;
     right: 0;
-    top: 375px;
-    height: 100%;
+    top: 387px;
+    
 }
 
 #current-weather{
@@ -65,12 +65,14 @@ body{
 }
 
 .icon {
-   
+   height: 50px;
+   width: 50px;
 }
 
 .scroll{
     overflow: auto;
     white-space: nowrap;
+  
 }
 
 .scroll a {
@@ -84,3 +86,7 @@ body{
   .scroll a:hover {
     background-color: #777;
   }
+
+.box-width {
+    width: 150px;
+}
