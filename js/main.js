@@ -17,7 +17,7 @@ function changeCity(){
         // calling the temprature from JSON
         // "Math.floor" rounds number to whole number
         var temp = Math.floor(data.current.temp);
-        currentTemp = temp + "&#176;"
+        currentTemp = temp + "°";
 
         var weather = data.current.weather[0].description;
 
@@ -31,55 +31,75 @@ function changeCity(){
 
         // calling the temp class in the HTML to display the temprature
         $('.current-temp').empty();
-        $('.current-temp').append(temp);
+        $('.current-temp').append(temp + "°");
 
 
       // Hourly Weather Info Calls     
         const hourlyList = document.querySelector("#hourly-weather div");
         for(let i = 0; i < data.hourly.length; i++){
+          // Getting info for hourly data from the API
           var hourlyData = data.hourly[i];
+           // Getting info for the temprature from the API
           var temp = Math.floor(hourlyData.temp);
           temp = temp; 
-
+          // Getting info for the weather icon from the API
           var icon = "https://openweathermap.org/img/wn/" + hourlyData.weather[0].icon + "@2x.png";
-
+          // Getting info for the weather description from the API
           var weather = hourlyData.weather[0].description;
 
+          // Puts the hourly template in the template-hourly div
           var template = document.querySelector("#template-hourly").cloneNode(true);
+
+          // Displays the time from API
           template.querySelector(".hourly-time").innerText = hourCoverter(hourlyData.dt);
+          // Displays the weather icon from API
           template.querySelector("img").src = icon;
+           // Displays the weather desription from API
           template.querySelector(".hourly-weather").innerText = weather;
-          template.querySelector(".hourly-temp").innerText = temp;
+          // Displays the temprature from API
+          template.querySelector(".hourly-temp").innerText = temp + "°";
+          // Makes the template display as an inline-block
           template.style.display = "inline-block";
           hourlyList.append(template);
-        } 
+        };
         
         // Weekly Weather Info Calls
         const weeklyList = document.querySelector("#weekly-weather div");
         for(let i = 0; i < data.daily.length; i++){
+
+          // Getting info for daily data from the API
           var weeklyData = data.daily[i];
+          // Getting info for the temprature from the API
           var temp = Math.floor(weeklyData.temp.min) + "/" + Math.floor(weeklyData.temp.max);
           temp = temp; 
-
+          // Getting info for the weather icon from the API
           var icon = "https://openweathermap.org/img/wn/" + weeklyData.weather[0].icon + "@2x.png";
-
+          // Getting info for the weather description from the API
           var weather = weeklyData.weather[0].description;
 
+          // Puts the weekly template in the template-weekly div
           var template = document.querySelector("#template-weekly").cloneNode(true);
+
+          // Displays the time from API
           template.querySelector(".weekly-hour").innerText =  dayCoverter(weeklyData.dt);
+          // Displays the weather icon from API
           template.querySelector("img").src = icon;
+          // Displays the weather desription from API
           template.querySelector(".weekly-weather").innerText = weather;
-          template.querySelector(".weekly-temp").innerText = temp;
+          // Displays the temprature from API
+          template.querySelector(".weekly-temp").innerText = temp + "°";
+          // Makes the template display as an inline-block
           template.style.display = "inline-block";
           weeklyList.append(template);
-
         };
-
     });
 }
 
+// Google map function
 function initMap() {
+    // the default map location = Nashville, TN
     const myLatlng = { lat: 36.1627, lng: -86.7816 };
+    // Default map zoom
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 8,
       center: myLatlng,

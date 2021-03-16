@@ -6,9 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <!-- End of Meta Tags -->
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
         <!-- JS Links -->
-        
-        
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -89,7 +92,7 @@
         End of City Selctor -->
         
     <div class="body">
-        <h1 class="text-center mt-3">Weather App</h1>
+        <img class="img-fluid mx-auto d-block mt-3 logo-img" src="images/sun-checker-logo.png" alt="sun checker logo">
         <div class="rounded my-3 img-fluid container-sm" id="map" style="height: 500px;"></div>
 
         <div class="container-sm" id="weather-info">
@@ -103,6 +106,8 @@
             <!-- Current Weatther Section -->
             <br>
             <div id="current-weather">
+                <!-- Now -->
+                <div class="fw-bold mt-3"> Now </div>
                 <!-- Weather Icon Image -->
                 <img class="mt-3 icon" src="images/location.png" style="height: 50px; width: 50px;" alt="icon"> 
                 <!-- Weather Icon Desciption -->
@@ -116,7 +121,7 @@
             <div id="hourly-weather">
                 <div class="d-flex justify-content-start mt-3 scroll">
                     <!-- One Hour -->
-                    <div id="template-hourly" style="display: none;" class="me-3">
+                    <div id="template-hourly" style="display: none;" class="mx-auto make-border">
                         <div class="hourly-time fw-bold"> 10 AM </div>
                         <img class="mt-3 icon" src="images/location.png" alt="icon">
                         <div class="hourly-weather box-width"> sunny </div>
@@ -130,9 +135,9 @@
             <div id="weekly-weather">
                 <div class="d-flex justify-content-start mt-3 scroll">
                     <!-- First Day-->
-                    <div class="me-3" id="template-weekly" style="display: none;">
+                    <div class="mx-auto make-border" id="template-weekly" style="display: none;">
                         <div class="weekly-hour fw-bold"> Monday </div>
-                        <img class="mt-3 icon" src="images/location.png" style="height: 50px; width: 50px;" alt="icon">
+                        <img class="mt-3 icon" src="images/location.png" alt="icon">
                         <div class="weekly-weather box-width"> sunny/ clear </div>
                         <div class="weekly-temp fw-bold"> 56/69 </div>
                     </div>
@@ -147,6 +152,10 @@
             <button type="button" class="btn btn-outline-secondary my-3" id="c-btn"data-bs-toggle="button" autocomplete="off" aria-pressed="true">C</button>
 
         </div>
+
+        <footer>
+
+        </footer>
     </div>
         <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
         <script
