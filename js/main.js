@@ -36,6 +36,8 @@ function changeCity(){
 
       // Hourly Weather Info Calls     
         const hourlyList = document.querySelector("#hourly-weather div");
+        // Deletes all existing objects inside list
+        hourlyList.innerHTML = "";
         for(let i = 0; i < data.hourly.length; i++){
           // Getting info for hourly data from the API
           var hourlyData = data.hourly[i];
@@ -65,6 +67,8 @@ function changeCity(){
         
         // Weekly Weather Info Calls
         const weeklyList = document.querySelector("#weekly-weather div");
+        // Deletes all existing objects inside list
+        weeklyList.innerHTML = "";
         for(let i = 0; i < data.daily.length; i++){
 
           // Getting info for daily data from the API

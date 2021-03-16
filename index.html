@@ -109,7 +109,7 @@
                 <!-- Now -->
                 <div class="fw-bold mt-3"> Now </div>
                 <!-- Weather Icon Image -->
-                <img class="mt-3 icon" src="images/location.png" style="height: 50px; width: 50px;" alt="icon"> 
+                <img class="mt-3 icon" src="images/location.png" style="height: 50px; width: 50px;" alt="icon">
                 <!-- Weather Icon Desciption -->
                 <div class="current-weather">sunny</div>
                 <!-- Weather Temprature -->
@@ -120,28 +120,31 @@
             <!-- Hourly Weather -->
             <div id="hourly-weather">
                 <div class="d-flex justify-content-start mt-3 scroll">
-                    <!-- One Hour -->
-                    <div id="template-hourly" style="display: none;" class="mx-auto make-border">
-                        <div class="hourly-time fw-bold"> 10 AM </div>
-                        <img class="mt-3 icon" src="images/location.png" alt="icon">
-                        <div class="hourly-weather box-width"> sunny </div>
-                        <div class="hourly-temp fw-bold"> 69 </div>
-                    </div>
+
                 </div>
             </div>
-            <!-- End of Hourly Weather -->
+            <!-- One Hour -->
+            <div id="template-hourly" style="display: none;" class="mx-auto make-border">
+                <div class="hourly-time fw-bold"> 10 AM </div>
+                <img class="mt-3 icon" src="images/location.png" alt="icon">
+                <div class="hourly-weather box-width"> sunny </div>
+                <div class="hourly-temp fw-bold"> 69 </div>
+            </div>
 
+            <!-- End of Hourly Weather -->
             <!-- Weekly Weather -->
             <div id="weekly-weather">
                 <div class="d-flex justify-content-start mt-3 scroll">
-                    <!-- First Day-->
-                    <div class="mx-auto make-border" id="template-weekly" style="display: none;">
-                        <div class="weekly-hour fw-bold"> Monday </div>
-                        <img class="mt-3 icon" src="images/location.png" alt="icon">
-                        <div class="weekly-weather box-width"> sunny/ clear </div>
-                        <div class="weekly-temp fw-bold"> 56/69 </div>
-                    </div>
+
                 </div>
+            </div>
+
+            <!-- First Day-->
+            <div class="mx-auto make-border" id="template-weekly" style="display: none;">
+                <div class="weekly-hour fw-bold"> Monday </div>
+                <img class="mt-3 icon" src="images/location.png" alt="icon">
+                <div class="weekly-weather box-width"> sunny/ clear </div>
+                <div class="weekly-temp fw-bold"> 56/69 </div>
             </div>
             <!-- End of Weekly Weather -->
 
@@ -149,12 +152,12 @@
             <!-- F -->
             <button type="button" class="btn btn-outline-secondary my-3 active" id="f-btn" data-bs-toggle="button" autocomplete="off">F</button>
             <!-- C -->
-            <button type="button" class="btn btn-outline-secondary my-3" id="c-btn"data-bs-toggle="button" autocomplete="off" aria-pressed="true">C</button>
+            <button type="button" class="btn btn-outline-secondary my-3" id="c-btn" data-bs-toggle="button" autocomplete="off" aria-pressed="true">C</button>
 
         </div>
 
         <footer>
-
+            <p class="text-center"> &copy; 2021 SOL CHECKER</p>
         </footer>
     </div>
         <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
