@@ -18,8 +18,9 @@ body{
 } */
 
 .logo-img{
-    height: 25%;
-    width: 25%;
+    display: block;
+    height: 90px;
+    width: 200px;
 }
 
 .container-sm{
@@ -42,6 +43,25 @@ body{
 @keyframes example{
     from   { left:0px; right:0px; top:100%;}
     to { left:0px; right:0px; top:500px;}
+}
+
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+    #weather-info{
+        animation-name: example;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-in-out;
+        box-shadow: 0px 7px 7px #999;
+        display: none;
+        left: 0;
+        position:absolute;
+        right: 0;
+        top: 350px;
+    }
+    @keyframes example{
+        from   { left:0px; right:0px; top:100%;}
+        to { left:0px; right:0px; top:350px;}
+    }
 }
 
 #current-weather{

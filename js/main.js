@@ -273,4 +273,19 @@ function dayCoverter(timeStamp) {
   
 };
 
+// Makes the logo disapper if scrolled down
+// $(function() {
+//   $(document).on("scroll", function() {
+//     // Makes the logo disapper if scrolled down
+//     if($(document).scrollTop() > 10){
+//         document.querySelector(".logo-img").style.display ="none"; 
+//         document.querySelector("#map").classList.add("mt-5");
+//     // Makes the logo reapper if scrolled up
+//     } else  if ($(document).scrollTop() < 10){
+//         document.querySelector(".logo-img").style.display ="block";
+//         document.querySelector("#map").classList.remove("mt-5");
+      
+//     }; 
+//   });
+// });
 
