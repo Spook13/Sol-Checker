@@ -24,7 +24,16 @@ body{
 }
 
 .select-prompt{
+    font-size: 40px;
     text-decoration: underline solid 3px #00AEEF;;
+}
+
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+    .select-prompt{
+        font-size: 18px;
+        text-decoration: underline solid 3px #00AEEF;;
+    }
 }
 
 .container-sm{
