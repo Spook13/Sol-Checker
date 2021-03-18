@@ -23,6 +23,10 @@ body{
     width: 200px;
 }
 
+.select-prompt{
+    text-decoration: underline solid 3px #00AEEF;;
+}
+
 .container-sm{
     background-color: white;
     border: solid 3px #00AEEF;
